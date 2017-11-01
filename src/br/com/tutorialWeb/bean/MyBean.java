@@ -4,6 +4,7 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
 import javax.faces.component.html.HtmlInputText;
 import javax.faces.component.html.HtmlOutputText;
+import javax.faces.event.ActionEvent;
 import javax.faces.event.ValueChangeEvent;
 @ManagedBean
 @RequestScoped
@@ -76,5 +77,10 @@ public class MyBean {
     private void log(Object object) {
         String methodName = Thread.currentThread().getStackTrace()[2].getMethodName();
         System.out.println("MyBean " + methodName + ": " + object);
+    }
+    
+    public void mudanca(ActionEvent e){
+    	inputValue = e.getComponent().getClientId();
+    	System.out.println("mudanca"+inputValue);
     }
 }

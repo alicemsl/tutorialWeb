@@ -14,7 +14,10 @@ xmlns:h="http://java.sun.com/jsf/html">
     </h:inputText>
     <h:commandButton
         value="submit"
-        action="#{myBean.action}" />
+        actionListener="#{myBean.mudanca}"
+        action="#{myBean.action}"
+         />
+       
     <h:outputText
         binding="#{myBean.outputComponent}"
         value="#{myBean.outputValue}" />
